@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas (Draw w/Mouse) - FINISHED</title>
+</head>
+<body>
+<canvas id="draw" width="800" height="800"></canvas>
+<script>
+
+	const canvas = document.querySelector('#draw');
+	//grab the canvas that we need to draw on
+
+	const ctx = canvas.getContext('2d');
+	//we draw on the CONTEXT of the canvas
+
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+	//size up canvas to fit window
+
+	ctx.strokeStyle = '#BADA55';//color
+	ctx.lineJoin = 'round';//when line meets another line is rounded
+	ctx.lineCap = 'round';//end of line is giong to be rounded
+	ctx.lineWidth = 1;//this starts line width at 1
+
+	let isDrawing = false; //only drawing is when var is set to true
+
+	let lastX = 0;
+	let lastY = 0;
+	//ending (x,y) coordinates
+
+	let hue = 0;
+	let direction = true;
+	//building up
+
+	//ctx.globalCompositeOperation = 'multiply';
+	//combines colors
+	//commented out bc didn't like the effect LOL
+
+	function draw(e){
+		//console.log(e);
+		if(!isDrawing) return;
+		//stops the function from running when not pressing mouse down
+
+		console.log(e);
+
+		ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+
+		ctx.beginPath();//ctx is where we do all our drawing
+		//start from
+		ctx.moveTo(lastX,lastY);
+		//goes to
+		ctx.lineTo(e.offsetX, e.offsetY);
+		ctx.stroke();//draws line
+
+		[lastX, lastY] = [e.offsetX, e.offsetY];
+
+		hue++;//this increments hue to change color
+		if(hue>=360) {
+			hue = 0;
+		}
+
+
+
+
+		if(ctx. lineWidth >= 100 || ctx.lineWidth <=1) {
+			direction = !direction;
+		}
+
+		if(direction){
+			ctx.lineWidth++;
+
+		} else {
+			ctx.lineWidth--;
+		}
+
+		//if lineWidth > 100 flip direction to go smaller
+		//if lineWidth < 1 flip direction to go bigger
+
+
+	}
+
+
+	canvas.addEventListener('mousedown',(e) => {
+		isDrawing = true;
+
+		[lastX, lastY] = [e.offsetX, e.offsetY];
+		//as soon as the person clicks their mouse down
+		//we update the lastX & lastY
+		//this is how we start where the mouse is clicked!
+
+	});
+
+	canvas.addEventListener('mousemove',draw);
+	canvas.addEventListener('mouseup',() => isDrawing = false);
+	canvas.addEventListener('mouseout',() => isDrawing = false);
+	//when mouse is down, we draw
+	//when mouse is up or off screen, we are NOT
+
+</script>
+
+<style>
+  html, body {
+    margin:0;
+  }
+</style>
+
+</body>
+</html>
