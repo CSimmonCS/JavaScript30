@@ -20,3 +20,5 @@ Day 8 - HTMl5 Canvas Drawing Tool (Multi-color shape-shifting painter)
 
 Day 9 - Dev Tool Fundamentals
 
+Day 10 - Hold Shift To Check Checkboxes
+
