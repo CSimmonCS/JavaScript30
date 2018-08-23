@@ -2,7 +2,7 @@
 
 This is the repository for my JavaScript#30 challenge to hone my skills in JavaScript.
 
----Days with '***' are projects that I found enjoyable && a good show of javascript prowess
+---Days with '***' are projects that I found enjoyable && a good show of JavaScript prowess
 
 Day 1 - Drumkit
 
