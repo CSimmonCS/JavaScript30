@@ -29,3 +29,7 @@ Day 11 - Custom HTML5 Video Player***
 Day 12 - Key Sequence Detector (Secret Code 'cdotsim')
 
 Day 13 - Slide In On Scroll
+
+Day 14 - JavaScript References VS Copying
+
+Day 15 - Local Storage***
