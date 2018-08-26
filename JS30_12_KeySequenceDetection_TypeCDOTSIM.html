@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type CDOTSIM - FINISHED</title>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+<script>
+const pressed = [];
+const secretCode = 'cdotsim';//secret code user needs to press
+
+window.addEventListener('keyup', (e) => {
+	console.log(e.key);
+	pressed.push(e.key);
+	pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+	//if we're looking for 7 we trim from there
+	if(pressed.join('').includes(secretCode)) {
+		console.log('YOU GOT IT MAN!');
+		cornify_add();//adds random stuff to the screen!!!
+	}
+	console.log(pressed);
+})
+//whenever key goes up, we run a function with event 'e'
+//whenever a key is pressed, we push character into array
+//we have a maximum array length of secretCode
+
+</script>
+</body>
+</html>
