@@ -37,3 +37,5 @@ Day 15 - Local Storage***
 Day 16 - Mouse Move Shadow***
 
 Day 17 - Sort Without Articles
+
+Day 18 - Adding Up Times with Reduce
