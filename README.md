@@ -45,3 +45,5 @@ Day 19 - Webcam Fun***
 Day 20 - Speech Detection***
 
 Day 21 - Geolocation
+
+Day 22 - Follow Along Links Highlighter
